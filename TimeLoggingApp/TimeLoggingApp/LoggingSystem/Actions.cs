@@ -11,8 +11,8 @@ namespace TimeLoggingApp
 
 		public Actions()
 		{
-			AddAction("Work", Color.Blue);
-			AddAction("Play", Color.Teal);
+			Add("Work", Color.Blue);
+			Add("Play", Color.Teal);
 		}
 
 		public Action GetAction(int actionId)
@@ -20,11 +20,16 @@ namespace TimeLoggingApp
 			return _actions.Find(a => a.id == actionId);
 		}
 
-		public void AddAction(string actionName, Color actionColor)
+		public void Add(string actionName, Color actionColor)
 		{
 			var newAction = new Action(GetNextActionId(), actionName);
 			newAction.color = actionColor;
 			_actions.Add(newAction);
+		}
+
+		public void Remove(Action action)
+		{
+			_actions.Remove(action);
 		}
 
 		private int GetNextActionId()

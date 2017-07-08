@@ -139,6 +139,330 @@
       <Name>TimeLoggingApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bag32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bargraph32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\block32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\box32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\boxdownload32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\boxupload32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\camera32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cameraminus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cameraplus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\camerastar32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cardgame32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\circleleft32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\circleright32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\clock32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\comment32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\commentblack32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\contactbook32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\contactcard32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cup32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\download32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\exchange32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\folder32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\folderblock32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\folderminus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\folderplus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gear32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\glitter32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\heart32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\leftarrow32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\leftturnarrow32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\lightbulb32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\linedpaper32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\linedpapercheck32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\linedpaperlock32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\linedpaperminus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\linedpaperpencil32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\linedpaperplus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\lock32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mail32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mailblock32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mailminus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mailopened32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mailplus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mailstar32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mapleleaf32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\melody32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\minus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\moneyreceipt32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monitor32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mouse32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\note32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notecheck32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notepencil32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\paper32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\papercheck32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\paperheart32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\paperlock32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\paperminus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\papermusic32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\paperpencil32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\paperphoto32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\paperplus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\paperstar32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pencil32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pencilplus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\phone32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\phonebook32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plug32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\printer32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\questionbook32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\radio32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\recycle32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\risegraph32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rss32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scissors32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\search32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shield32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shieldcross32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shoppingcart32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sleep32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slide32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\smile32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\spanner32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\speaker32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\speakermute32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\star32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\stop32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\turnright32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\unlock32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\upload32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\user32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\userblock32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\userminus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\userplus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\users32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\usersblock32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\usersminus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\usersplus32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wand32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\warning32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wordpress32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wrench32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arrow32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arrowright32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\article32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

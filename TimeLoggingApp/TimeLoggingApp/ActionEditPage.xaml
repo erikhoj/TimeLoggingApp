@@ -7,12 +7,21 @@
 			<Label Text="All Actions" 
 				   FontSize="Large"/>
 			<ScrollView VerticalOptions="FillAndExpand">
-				<StackLayout>
+				<StackLayout x:Name="ActionContainer">
 					<Frame Margin="2">
 						<StackLayout Orientation="Horizontal">
-							<Label Text="Action name"/>
-							<Button Text="Edit"/>
-							<Button Text="Delete"/>
+							<Label Text="Action name"
+								   HorizontalOptions="FillAndExpand"
+								   VerticalOptions="Center"/>
+							<Button Image="pencil32.png"
+									
+									WidthRequest="50"
+									HeightRequest="50"
+									HorizontalOptions="End"/>
+							<Button Image="block32"
+									WidthRequest="50"
+							        HeightRequest="50"
+									HorizontalOptions="End"/>
 						</StackLayout>
 					</Frame>
 					<Button x:Name="AddButton" Text="add new action"/>
