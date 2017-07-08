@@ -8,6 +8,8 @@ namespace TimeLoggingApp
 	{
 		private App _app;
 
+		private int _buttonStackStartChildren;
+
 		public MainPage()
 		{
 			_app = (App)Application.Current;
@@ -15,6 +17,9 @@ namespace TimeLoggingApp
 			InitializeComponent();
 
 			StopButton.Clicked += OnStopButtonClicked;
+			EditActionsButton.Clicked += (sender, info) => Navigation.PushAsync(new ActionEditPage());
+
+			_buttonStackStartChildren = ButtonStack.Children.Count;
 		}
 
 		protected override void OnAppearing()
@@ -49,9 +54,15 @@ namespace TimeLoggingApp
 
 		private void SetupActionButtons()
 		{
+			// Remove all but the original children of buttonstack
+			while (ButtonStack.Children.Count > _buttonStackStartChildren)
+			{
+				ButtonStack.Children.RemoveAt(_buttonStackStartChildren);
+			}
+
 			var horizontal = CreateHorizontalStack();
 			ButtonStack.Children.Add(horizontal);
-
+			
 			int i = 0;
 			foreach (var action in _app.actions)
 			{

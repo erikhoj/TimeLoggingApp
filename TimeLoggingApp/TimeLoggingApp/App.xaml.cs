@@ -15,7 +15,7 @@ namespace TimeLoggingApp
 			
 			InitializeComponent();
 
-			MainPage = new TimeLoggingApp.MainPage();
+			MainPage = new NavigationPage(new TimeLoggingApp.MainPage());
 		}
 
 		protected override void OnStart()
