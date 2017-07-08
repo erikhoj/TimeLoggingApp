@@ -3,22 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TimeLoggingApp"
              x:Class="TimeLoggingApp.MainPage">
-	<ContentPage.Content>
-		<StackLayout>
-			<Label FontSize="Large"
-				   HorizontalOptions="Center"
-				   x:Name="CurrentActionLabel">Current Action</Label>
-			<ScrollView HeightRequest="250" BackgroundColor="Azure">
-				<Label x:Name="Log">
-					TestLog
-				</Label>
-			</ScrollView>
-			<ScrollView VerticalOptions="FillAndExpand">
-				<StackLayout x:Name="ButtonStack">
-					<Button HorizontalOptions="FillAndExpand" Text="Stop Current Action"
+	<StackLayout>
+		<Frame HorizontalOptions="Center">
+			<StackLayout>
+				<Label FontSize="Large"
+					       HorizontalOptions="Center">Current Action</Label>
+				<Label FontSize="Medium"
+					       HorizontalOptions="Center"
+					       x:Name="CurrentActionLabel">### Assign this</Label>
+			</StackLayout>
+
+		</Frame>
+
+		<Button x:Name="ViewGraphButton"
+					HeightRequest="50"
+					Text="View graph"></Button>
+
+		<Button x:Name="EditActionsButton" 
+					HeightRequest="50"
+					Text="Edit Actions"></Button>
+		<ScrollView VerticalOptions="FillAndExpand">
+			<StackLayout x:Name="ButtonStack">
+				<Button HorizontalOptions="FillAndExpand" 
+							Text="Stop Current Action"
+							BackgroundColor="Red"
+							TextColor="White"
 							x:Name="StopButton"></Button>
-				</StackLayout>s
-			</ScrollView>
-		</StackLayout>
-	</ContentPage.Content>
+			</StackLayout>
+		</ScrollView>
+	</StackLayout>
 </ContentPage>

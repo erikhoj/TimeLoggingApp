@@ -26,7 +26,6 @@ namespace TimeLoggingApp
 		private void OnStopButtonClicked(object sender, EventArgs eventArgs)
 		{
 			_app.actionLog.StopCurrentAction();
-			StopButton.IsEnabled = false;
 
 			UpdateCurrentAction();
 		}
@@ -35,11 +34,16 @@ namespace TimeLoggingApp
 		{
 			if (!_app.actionLog.IsPerformingAction())
 			{
-				CurrentActionLabel.Text = "No action being performed";
+				CurrentActionLabel.Text = "None";
+				CurrentActionLabel.TextColor = Color.Black;
+				StopButton.IsEnabled = false;
 			}
 			else
 			{
-				CurrentActionLabel.Text = "Current action: " + _app.actionLog.GetCurrentAction().name;
+				var currentAction = _app.actionLog.GetCurrentAction();
+				CurrentActionLabel.Text = currentAction.name;
+				CurrentActionLabel.TextColor = currentAction.color;
+				StopButton.IsEnabled = true;
 			}
 		}
 
