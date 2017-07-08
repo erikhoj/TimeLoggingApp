@@ -1,23 +1,23 @@
-﻿using System.Collections;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
 
 namespace TimeLoggingApp
 {
-	public class Actions : IEnumerable<Action>
+	public class Actions
 	{
+		[JsonProperty]
 		private List<Action> _actions = new List<Action>();
-
-		public Actions()
-		{
-			Add("Work", Color.Blue);
-			Add("Play", Color.Teal);
-		}
-
+		
 		public Action GetAction(int actionId)
 		{
 			return _actions.Find(a => a.id == actionId);
+		}
+
+		public Action[] GetActions()
+		{
+			return _actions.ToArray();
 		}
 
 		public void Add(string actionName, Color actionColor)
@@ -38,16 +38,6 @@ namespace TimeLoggingApp
 
 			var maxId = _actions.Select(a => a.id).Max();
 			return maxId + 1;
-		}
-
-		public IEnumerator<Action> GetEnumerator()
-		{
-			return _actions.GetEnumerator();
-		}
-
-		IEnumerator IEnumerable.GetEnumerator()
-		{
-			return GetEnumerator();
 		}
 	}
 }

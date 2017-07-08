@@ -4,7 +4,7 @@ namespace TimeLoggingApp
 {
 	public class Action
 	{
-		public int id { get; private set; }
+		public int id { get; }
 		public Color color = Color.Default;
 		public string name;
 

@@ -45,7 +45,7 @@ namespace TimeLoggingApp
 			}
 			else
 			{
-				var currentAction = _app.actionLog.GetCurrentAction();
+				var currentAction = _app.actions.GetAction(_app.actionLog.GetCurrentAction());
 				CurrentActionLabel.Text = currentAction.name;
 				CurrentActionLabel.TextColor = currentAction.color;
 				StopButton.IsEnabled = true;
@@ -64,7 +64,7 @@ namespace TimeLoggingApp
 			ButtonStack.Children.Add(horizontal);
 			
 			int i = 0;
-			foreach (var action in _app.actions)
+			foreach (var action in _app.actions.GetActions())
 			{
 				var newButton = new Button()
 				{

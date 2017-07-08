@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace TimeLoggingApp
@@ -6,16 +7,10 @@ namespace TimeLoggingApp
 	public class ActionLog
 	{
 		public const int STOP_ACTION_ID = 0;
-
-		private readonly Actions _actions;
-
+		
+		[JsonProperty]
 		private readonly Stack<ActionTime> _log = new Stack<ActionTime>();
-
-		public ActionLog(Actions actions)
-		{
-			_actions = actions;
-		}
-
+		
 		public void StartAction(Action action)
 		{
 			StopCurrentAction();
@@ -44,11 +39,11 @@ namespace TimeLoggingApp
 			return true;
 		}
 
-		public Action GetCurrentAction()
+		public int GetCurrentAction()
 		{
-			if (!IsPerformingAction()) return null;
+			if (!IsPerformingAction()) return 0;
 
-			return _actions.GetAction(_log.Peek().actionId);
+			return _log.Peek().actionId;
 		}
 
 		private class ActionTime

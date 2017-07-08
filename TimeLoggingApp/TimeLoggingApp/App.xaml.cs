@@ -1,5 +1,4 @@
-﻿
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace TimeLoggingApp
 {
@@ -8,10 +7,14 @@ namespace TimeLoggingApp
 		public readonly ActionLog actionLog;
 		public readonly Actions actions;
 
+		private IActionProvider _actionProvider;
+
 		public App()
 		{
-			actions = new Actions();
-			actionLog = new ActionLog(actions);
+			_actionProvider = new PropertyActionProvider(this);
+
+			actions = _actionProvider.GetActions();
+			actionLog = _actionProvider.GetActionLog();
 			
 			InitializeComponent();
 
@@ -25,12 +28,11 @@ namespace TimeLoggingApp
 
 		protected override void OnSleep()
 		{
-			// Handle when your app sleeps
+			_actionProvider.WriteState();
 		}
 
 		protected override void OnResume()
 		{
-			// Handle when your app resumes
 		}
 	}
 }

@@ -22,6 +22,13 @@ namespace TimeLoggingApp
 
 			InitializeComponent();
 			_initialContainerChildren = ActionContainer.Children.Count;
+
+			AddButton.Clicked += OnAddButtonClicked;
+		}
+
+		private void OnAddButtonClicked(object sender, EventArgs e)
+		{
+			Navigation.PushAsync(new CreateActionPage());
 		}
 
 		protected override void OnAppearing()
@@ -36,7 +43,7 @@ namespace TimeLoggingApp
 				ActionContainer.Children.RemoveAt(_initialContainerChildren);
 			}
 
-			foreach (var action in _app.actions)
+			foreach (var action in _app.actions.GetActions())
 			{
 				ActionContainer.Children.Add(CreateActionContainer(action));
 			}
