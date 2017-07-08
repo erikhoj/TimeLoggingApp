@@ -17,7 +17,7 @@ namespace TimeLoggingApp
 			InitializeComponent();
 
 			StopButton.Clicked += OnStopButtonClicked;
-			EditActionsButton.Clicked += (sender, info) => Navigation.PushAsync(new ActionEditPage());
+			EditActionsButton.Clicked += (sender, info) => Navigation.PushAsync(new ActionOverviewPage());
 
 			_buttonStackStartChildren = ButtonStack.Children.Count;
 		}

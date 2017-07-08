@@ -6,7 +6,7 @@ using Xamarin.Forms.Xaml;
 namespace TimeLoggingApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ActionEditPage : ContentPage
+	public partial class ActionOverviewPage : ContentPage
 	{
 		private const string EDIT_BUTTON_ICON = "pencil32.png";
 		private const string DELETE_BUTTON_ICON = "minus32.png";
@@ -14,11 +14,27 @@ namespace TimeLoggingApp
 
 		private App _app;
 
-		public ActionEditPage()
+		private int _initialContainerChildren;
+
+		public ActionOverviewPage()
 		{
 			_app = (App) Application.Current;
 
 			InitializeComponent();
+			_initialContainerChildren = ActionContainer.Children.Count;
+		}
+
+		protected override void OnAppearing()
+		{
+			SetupActions();
+		}
+
+		private void SetupActions()
+		{
+			while (ActionContainer.Children.Count > _initialContainerChildren)
+			{
+				ActionContainer.Children.RemoveAt(_initialContainerChildren);
+			}
 
 			foreach (var action in _app.actions)
 			{
@@ -88,6 +104,9 @@ namespace TimeLoggingApp
 
 		private void OnEditButtonTapped(Action action)
 		{
+			var createPage = new CreateActionPage();
+			createPage.EditAction(action);
+			Navigation.PushAsync(createPage);
 		}
 	}
 }

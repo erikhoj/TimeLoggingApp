@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TimeLoggingApp.ActionOverviewPage">
+    <ContentPage.Content>
+        <StackLayout>
+			<ScrollView VerticalOptions="FillAndExpand">
+				<StackLayout x:Name="ActionContainer">
+					<Button x:Name="AddButton" Text="add new action"/>
+					<Label Text="Your Actions"
+						   HorizontalOptions="Center"
+						   FontSize="Large"></Label>
+				</StackLayout>
+			</ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

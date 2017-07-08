@@ -35,8 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ActionEditPage.xaml.cs">
-      <DependentUpon>ActionEditPage.xaml</DependentUpon>
+    <Compile Include="ActionOverviewPage.xaml.cs">
+      <DependentUpon>ActionOverviewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateActionPage.xaml.cs">
+      <DependentUpon>CreateActionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoggingSystem\Action.cs" />
     <Compile Include="LoggingSystem\ActionLog.cs" />
@@ -75,7 +78,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ActionEditPage.xaml">
+    <EmbeddedResource Include="ActionOverviewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CreateActionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

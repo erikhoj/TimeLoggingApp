@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TimeLoggingApp.CreateActionPage">
+    <ContentPage.Content>
+        <StackLayout>
+			<Label Text="Create new action"
+				   FontSize="Large"
+				   HorizontalOptions="Center"/>
+
+			<StackLayout Orientation="Horizontal">
+				<Label Text="Name: "
+					   FontSize="Medium"
+					   VerticalOptions="Center"/>
+				<Entry HorizontalOptions="FillAndExpand"
+					   x:Name="NameField"/>
+			</StackLayout>
+			
+			<StackLayout Orientation="Horizontal">
+				<Label Text="Color: "
+					   VerticalOptions="Center"
+					   FontSize="Medium"/>
+			</StackLayout>
+			
+			<StackLayout>
+				<Button Text="Confirm"
+						HorizontalOptions="FillAndExpand"
+						x:Name="ConfirmButton"/>
+				<Button Text="Cancel"
+				        x:Name="CancelButton"
+						HorizontalOptions="FillAndExpand"/>
+			</StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
