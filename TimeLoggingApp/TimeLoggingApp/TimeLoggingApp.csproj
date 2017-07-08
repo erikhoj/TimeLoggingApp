@@ -35,10 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ActionOverviewPage.xaml.cs">
+    <Compile Include="Pages\ActionOverviewPage.xaml.cs">
       <DependentUpon>ActionOverviewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CreateActionPage.xaml.cs">
+    <Compile Include="Pages\CreateActionPage.xaml.cs">
       <DependentUpon>CreateActionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Debugging\DebugLogger.cs" />
@@ -52,15 +52,18 @@
     <Compile Include="LoggingSystem\IActionProvider.cs" />
     <Compile Include="LoggingSystem\Actions.cs" />
     <Compile Include="LoggingSystem\PropertyActionProvider.cs" />
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimeGraphPage.xaml.cs">
+      <DependentUpon>TimeGraphPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ColorUtility.cs" />
     <Compile Include="Utility\ExtensionMethods.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPage.xaml">
+    <EmbeddedResource Include="Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -87,13 +90,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ActionOverviewPage.xaml">
+    <EmbeddedResource Include="Pages\ActionOverviewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CreateActionPage.xaml">
+    <EmbeddedResource Include="Pages\CreateActionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\TimeGraphPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

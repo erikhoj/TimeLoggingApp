@@ -18,6 +18,7 @@ namespace TimeLoggingApp
 
 			StopButton.Clicked += OnStopButtonClicked;
 			EditActionsButton.Clicked += (sender, info) => Navigation.PushAsync(new ActionOverviewPage());
+			ViewGraphButton.Clicked += (sender, info) => Navigation.PushAsync(new TimeGraphPage());
 
 			_buttonStackStartChildren = ButtonStack.Children.Count;
 		}
