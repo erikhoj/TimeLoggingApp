@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
+using BitBreak.Utility;
 using Xamarin.Forms;
 
 namespace TimeLoggingApp
@@ -9,7 +11,9 @@ namespace TimeLoggingApp
 	{
 		[JsonProperty]
 		private List<Action> _actions = new List<Action>();
-		
+
+		public event Action<Action> actionDeleted;
+
 		public Action GetAction(int actionId)
 		{
 			return _actions.Find(a => a.id == actionId);
@@ -30,6 +34,7 @@ namespace TimeLoggingApp
 		public void Remove(Action action)
 		{
 			_actions.Remove(action);
+			actionDeleted.SafeInvoke(action);
 		}
 
 		private int GetNextActionId()

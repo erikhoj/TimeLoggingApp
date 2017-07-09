@@ -15,7 +15,11 @@ namespace TimeLoggingApp
 			_actionProvider = new PropertyActionProvider(this);
 
 			actions = _actionProvider.GetActions();
+
 			actionLog = _actionProvider.GetActionLog();
+
+			actions.actionDeleted += actionLog.OnActionRemoved;
+
 			Logging.logger.WriteMessage(actionLog);
 			
 			InitializeComponent();

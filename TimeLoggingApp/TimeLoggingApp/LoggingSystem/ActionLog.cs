@@ -12,21 +12,21 @@ namespace TimeLoggingApp
 		public const int STOP_ACTION_ID = 0;
 		
 		[JsonProperty]
-		private readonly Stack<ActionTime> _log = new Stack<ActionTime>();
+		private readonly List<ActionTime> _log = new List<ActionTime>();
 		
 		public void StartAction(Action action)
 		{
 			StopCurrentAction();
 
 			var actionTime = new ActionTime(DateTime.Now, action.id);
-			_log.Push(actionTime);
+			_log.Add(actionTime);
 		}
 
 		public void StopCurrentAction()
 		{
 			if (IsPerformingAction())
 			{
-				_log.Push(new ActionTime(DateTime.Now, STOP_ACTION_ID));
+				_log.Add(new ActionTime(DateTime.Now, STOP_ACTION_ID));
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace TimeLoggingApp
 		{
 			if (_log.Count == 0) return false;
 
-			if (_log.Peek().actionId == STOP_ACTION_ID)
+			if (_log.Last().actionId == STOP_ACTION_ID)
 			{
 				return false;
 			}
@@ -46,23 +46,26 @@ namespace TimeLoggingApp
 		{
 			if (!IsPerformingAction()) return 0;
 
-			return _log.Peek().actionId;
+			return _log.Last().actionId;
+		}
+
+		public void OnActionRemoved(Action action)
+		{
+			_log.RemoveAll(a => a.actionId == action.id);
 		}
 
 		public int GetMinutesSpentOnAction(int actionId, DateTime startTime, DateTime endTime)
 		{
-			var logArray = _log.Reverse().ToArray();
-
 			var timeSpent = 0;
-			for (int i = 0; i < logArray.Length; i++)
+			for (int i = 0; i < _log.Count; i++)
 			{
-				var actionTime = logArray[i];
+				var actionTime = _log[i];
 
 				if (actionTime.actionId != actionId) continue;
 				if (!(DateTime.Compare(actionTime.time, startTime) >= 0)) continue;
 				if (!(DateTime.Compare(actionTime.time, endTime) <= 0)) continue;
 
-				var actionEnd = i < logArray.Length - 1 ? logArray[i + 1].time : DateTime.Now;
+				var actionEnd = i < _log.Count - 1 ? _log[i + 1].time : DateTime.Now;
 				actionEnd = DateTime.Compare(actionEnd, endTime) <= 0 ? actionEnd : endTime;
 
 				Logging.logger.WriteMessage("ActionStart: " + actionTime.time + " ActionEnd: " + actionEnd);

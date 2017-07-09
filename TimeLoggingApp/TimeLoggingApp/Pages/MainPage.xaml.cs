@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TimeLoggingApp.Utility;
 using Xamarin.Forms;
 
@@ -9,6 +10,8 @@ namespace TimeLoggingApp
 		private App _app;
 
 		private int _buttonStackStartChildren;
+
+		private List<Button> _actionButtons = new List<Button>();
 
 		public MainPage()
 		{
@@ -43,6 +46,7 @@ namespace TimeLoggingApp
 				CurrentActionLabel.Text = "None";
 				CurrentActionLabel.TextColor = Color.Black;
 				StopButton.IsEnabled = false;
+				EnableAllButtonsExcluding(0);
 			}
 			else
 			{
@@ -50,11 +54,22 @@ namespace TimeLoggingApp
 				CurrentActionLabel.Text = currentAction.name;
 				CurrentActionLabel.TextColor = currentAction.color;
 				StopButton.IsEnabled = true;
+				EnableAllButtonsExcluding(currentAction.id);
+			}
+		}
+
+		private void EnableAllButtonsExcluding(int actionId)
+		{
+			foreach (var button in _actionButtons)
+			{
+				button.IsEnabled = !button.StyleId.Equals(actionId.ToString());
 			}
 		}
 
 		private void SetupActionButtons()
 		{
+			_actionButtons.Clear();
+
 			// Remove all but the original children of buttonstack
 			while (ButtonStack.Children.Count > _buttonStackStartChildren)
 			{
@@ -72,10 +87,13 @@ namespace TimeLoggingApp
 					Text = action.name,
 					TextColor = ColorUtility.GetContrastingColor(action.color),
 					BackgroundColor = action.color,
-					HorizontalOptions = LayoutOptions.FillAndExpand
+					HorizontalOptions = LayoutOptions.FillAndExpand,
+					StyleId = action.id.ToString()
 				};
 
-				newButton.Clicked += (sender, info) => OnActionButtonClicked(action);
+				_actionButtons.Add(newButton);
+
+				newButton.Clicked += (sender, info) => OnActionButtonClicked(sender, action);
 
 				horizontal.Children.Add(newButton);
 
@@ -88,7 +106,7 @@ namespace TimeLoggingApp
 			}
 		}
 
-		private void OnActionButtonClicked(Action action)
+		private void OnActionButtonClicked(object sender, Action action)
 		{
 			_app.actionLog.StartAction(action);
 
