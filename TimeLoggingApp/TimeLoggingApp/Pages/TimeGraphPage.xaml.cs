@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using TimeLoggingApp.Debugging;
 using TimeLoggingApp.Utility;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -46,11 +48,15 @@ namespace TimeLoggingApp
 
 			yield return nameLabel;
 
-			var time = "10H 15M";
+			var startOfWeek = DateTime.Now.StartOfWeek(DayOfWeek.Monday);
+			var endOfWeek = DateTime.Now.EndOfWeek(DayOfWeek.Monday);
+			Logging.logger.WriteMessage("Start of week: " + startOfWeek + " End of week: " + endOfWeek);
+
+			var time = _app.actionLog.GetMinutesSpentOnAction(action.id, startOfWeek, endOfWeek);
 
 			var timeLabel = new Label()
 			{
-				Text = time,
+				Text = time + "M",
 				HorizontalTextAlignment = TextAlignment.End,
 				VerticalTextAlignment = TextAlignment.Center,
 				FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),

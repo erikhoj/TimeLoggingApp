@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using TimeLoggingApp.Debugging;
+using Xamarin.Forms;
 
 namespace TimeLoggingApp
 {
@@ -15,6 +16,7 @@ namespace TimeLoggingApp
 
 			actions = _actionProvider.GetActions();
 			actionLog = _actionProvider.GetActionLog();
+			Logging.logger.WriteMessage(actionLog);
 			
 			InitializeComponent();
 
