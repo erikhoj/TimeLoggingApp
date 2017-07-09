@@ -1,6 +1,7 @@
 ﻿using BitBreak.Utility;
 using Newtonsoft.Json;
 using TimeLoggingApp.Debugging;
+using TimeLoggingApp.Utility;
 
 namespace TimeLoggingApp
 {
@@ -30,7 +31,7 @@ namespace TimeLoggingApp
 				var jsonString = (string) json;
 				
 				Logging.logger.WriteMessage("Read value for key " + key + ": " + jsonString);
-				var result = JsonConvert.DeserializeObject<T>(jsonString);
+				var result = JsonConvert.DeserializeObject<T>(jsonString, new JsonXamarinColorConverter());
 				return result;
 			}
 

@@ -62,6 +62,8 @@
     <Compile Include="Utility\ColorUtility.cs" />
     <Compile Include="Utility\DateTimeExtensions.cs" />
     <Compile Include="Utility\ExtensionMethods.cs" />
+    <Compile Include="Utility\JsonCreationConverter.cs" />
+    <Compile Include="Utility\JsonXamarinColorConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\MainPage.xaml">
