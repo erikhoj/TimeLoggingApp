@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TimeLoggingApp.Pages.ColorPickerPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<x:Double x:Key="colorBoxSize">40</x:Double>
+			<GridLength x:Key="columnLength">40</GridLength>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
+	<ContentPage.Content>
+        <StackLayout>
+            <Label Text="Pick a color!"
+				   HorizontalOptions="Center"
+				   FontSize="Large"/>
+
+			<ScrollView VerticalOptions="FillAndExpand">
+				<Grid x:Name="ColorGrid"
+				  HorizontalOptions="Center">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="{StaticResource columnLength}" />
+						<ColumnDefinition Width="{StaticResource columnLength}" />
+						<ColumnDefinition Width="{StaticResource columnLength}" />
+						<ColumnDefinition Width="{StaticResource columnLength}" />
+					</Grid.ColumnDefinitions>
+				</Grid>
+			</ScrollView>
+			
+			<BoxView HeightRequest="3"
+					 BackgroundColor="Accent"
+					 HorizontalOptions="Fill"/>
+			
+			<StackLayout Orientation="Horizontal"
+						 HorizontalOptions="Center">
+				<Label Text="Current color: "
+					   VerticalOptions="Center"/>
+				<BoxView HeightRequest="{StaticResource colorBoxSize}"
+						 WidthRequest="{StaticResource colorBoxSize}"
+						 x:Name="CurrentColorBox"/>
+			</StackLayout>
+			
+			<Button Text="Confirm selection"
+					x:Name="ConfirmButton"/>
+			
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

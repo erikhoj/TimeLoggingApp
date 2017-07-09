@@ -38,6 +38,9 @@
     <Compile Include="Pages\ActionOverviewPage.xaml.cs">
       <DependentUpon>ActionOverviewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ColorPickerPage.xaml.cs">
+      <DependentUpon>ColorPickerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CreateActionPage.xaml.cs">
       <DependentUpon>CreateActionPage.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\TimeGraphPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ColorPickerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

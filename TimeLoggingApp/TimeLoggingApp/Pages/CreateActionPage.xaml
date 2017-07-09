@@ -20,6 +20,7 @@
 				<Label Text="Color: "
 					   VerticalOptions="Center"
 					   FontSize="Medium"/>
+				<BoxView x:Name="ColorBox"/>
 			</StackLayout>
 			
 			<StackLayout>
