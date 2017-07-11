@@ -34,7 +34,6 @@ namespace TimeLoggingApp
 
 		protected override void OnSleep()
 		{
-			_actionProvider.WriteState();
 		}
 
 		protected override void OnResume()

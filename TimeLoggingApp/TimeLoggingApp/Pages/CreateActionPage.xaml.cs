@@ -37,22 +37,21 @@ namespace TimeLoggingApp
 
 		public void EditAction(Action action)
 		{
-			NameField.Text = action.name;
-
 			_actionBeingEdited = action;
-			_colorPicker.pickedColor = action.color;
-		}
 
-		protected override void OnDisappearing()
-		{
-			_actionBeingEdited = null;
+			if (_actionBeingEdited != null)
+			{
+				NameField.Text = action.name;
+				_colorPicker.pickedColor = action.color;
+			}
 		}
-
+		
 		private void OnConfirmButtonClicked(object sender, EventArgs args)
 		{
 			if (_actionBeingEdited != null)
 			{
 				_actionBeingEdited.name = NameField.Text;
+				_actionBeingEdited.color = _colorPicker.pickedColor;
 			}
 			else
 			{

@@ -21,6 +21,10 @@ namespace TimeLoggingApp
 
 			_actions = LoadFromProperties<Actions>(ACTIONS_KEY);
 			_actionLog = LoadFromProperties<ActionLog>(ACTION_LOG_KEY);
+
+			_actions.actionEdited += WriteState;
+			_actions.actionCreated += (a) => WriteState();
+			_actions.actionDeleted += (a) => WriteState();
 		}
 
 		private T LoadFromProperties<T>(string key) where T : new()

@@ -17,10 +17,9 @@ namespace TimeLoggingApp.Utility
 		public static DateTime EndOfWeek(this DateTime dt, DayOfWeek startOfWeek)
 		{
 			int diff = Math.Abs(dt.DayOfWeek - startOfWeek);
+			var invDiff = 7 - diff;
 
-			diff = diff == 0 ? 7 : 0;
-
-			return dt.AddDays(diff).Date;
+			return dt.AddDays(invDiff).Date;
 		}
 	}
 }

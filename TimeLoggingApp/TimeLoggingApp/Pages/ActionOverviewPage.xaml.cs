@@ -28,7 +28,9 @@ namespace TimeLoggingApp
 
 		private void OnAddButtonClicked(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new CreateActionPage());
+			var creationPage = new CreateActionPage();
+			creationPage.EditAction(null);
+			Navigation.PushAsync(creationPage);
 		}
 
 		protected override void OnAppearing()

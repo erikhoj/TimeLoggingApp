@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BitBreak.Utility;
 using TimeLoggingApp.Debugging;
 
 namespace TimeLoggingApp
@@ -13,13 +14,17 @@ namespace TimeLoggingApp
 		
 		[JsonProperty]
 		private readonly List<ActionTime> _log = new List<ActionTime>();
-		
+
+		public event System.Action logChanged;
+
 		public void StartAction(Action action)
 		{
 			StopCurrentAction();
 
 			var actionTime = new ActionTime(DateTime.Now, action.id);
 			_log.Add(actionTime);
+
+			logChanged.SafeInvoke();
 		}
 
 		public void StopCurrentAction()
@@ -27,6 +32,7 @@ namespace TimeLoggingApp
 			if (IsPerformingAction())
 			{
 				_log.Add(new ActionTime(DateTime.Now, STOP_ACTION_ID));
+				logChanged.SafeInvoke();
 			}
 		}
 
@@ -52,6 +58,7 @@ namespace TimeLoggingApp
 		public void OnActionRemoved(Action action)
 		{
 			_log.RemoveAll(a => a.actionId == action.id);
+			logChanged.SafeInvoke();
 		}
 
 		public int GetMinutesSpentOnAction(int actionId, DateTime startTime, DateTime endTime)
