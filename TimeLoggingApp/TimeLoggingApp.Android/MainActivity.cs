@@ -12,8 +12,12 @@ namespace TimeLoggingApp.Droid
 	[Activity(Label = "TimeLoggingApp", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
+		public static MainActivity Instance;
+
 		protected override void OnCreate(Bundle bundle)
 		{
+			Instance = this;
+
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
 

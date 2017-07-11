@@ -18,6 +18,8 @@ namespace TimeLoggingApp.Utility
 		{
 			int diff = Math.Abs(dt.DayOfWeek - startOfWeek);
 
+			diff = diff == 0 ? 7 : 0;
+
 			return dt.AddDays(diff).Date;
 		}
 	}

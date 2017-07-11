@@ -62,6 +62,7 @@ namespace TimeLoggingApp
 				var actionTime = _log[i];
 
 				if (actionTime.actionId != actionId) continue;
+				
 				if (!(DateTime.Compare(actionTime.time, startTime) >= 0)) continue;
 				if (!(DateTime.Compare(actionTime.time, endTime) <= 0)) continue;
 

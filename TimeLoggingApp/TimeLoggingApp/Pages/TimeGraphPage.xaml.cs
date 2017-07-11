@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TimeLoggingApp.Debugging;
+using TimeLoggingApp.Dependencies;
 using TimeLoggingApp.Utility;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,10 +16,19 @@ namespace TimeLoggingApp
 
 		private App _app;
 
+		private DateTime intervalStart;
+		private DateTime intervalEnd;
+		private int totalTimeSpent;
+
 		public TimeGraphPage ()
 		{
 			_app = (App) Application.Current;
 			InitializeComponent();
+
+			intervalStart = DateTime.Now.StartOfWeek(DayOfWeek.Monday);
+			intervalEnd = DateTime.Now.EndOfWeek(DayOfWeek.Monday);
+			Logging.logger.WriteMessage("Week Start: " + intervalStart + " Week end: " + intervalEnd);
+			totalTimeSpent = GetTotalMinutesSpent();
 
 			var actions = _app.actions.GetActions();
 			for (int row = 0; row < actions.Length; row++)
@@ -38,6 +48,17 @@ namespace TimeLoggingApp
 			}
 		}
 
+		private int GetTotalMinutesSpent()
+		{
+			var total = 0;
+			foreach (var action in _app.actions.GetActions())
+			{
+				total += _app.actionLog.GetMinutesSpentOnAction(action.id, intervalStart, intervalEnd);
+			}
+
+			return total;
+		}
+
 		private IEnumerable<View> GetViews(Action action)
 		{
 			var nameLabel = new Label()
@@ -48,12 +69,22 @@ namespace TimeLoggingApp
 
 			yield return nameLabel;
 
-			var startOfWeek = DateTime.Now.StartOfWeek(DayOfWeek.Monday);
-			var endOfWeek = DateTime.Now.EndOfWeek(DayOfWeek.Monday);
-			Logging.logger.WriteMessage("Start of week: " + startOfWeek + " End of week: " + endOfWeek);
+			var time = _app.actionLog.GetMinutesSpentOnAction(action.id, intervalStart, intervalEnd);
 
-			var time = _app.actionLog.GetMinutesSpentOnAction(action.id, startOfWeek, endOfWeek);
+			var fraction = 1f;
+			if (totalTimeSpent != 0)
+			{
+				fraction = time / (float)totalTimeSpent;
+			}
+			
+			Logging.logger.WriteMessage("Fraction: " + fraction);
 
+			var screenWidth = DependencyService.Get<IScreenSizeCalculator>().widthInDP;
+			var extensibleWidth = screenWidth - 100 - MINIMUM_PILLAR_SIZE;
+			var totalSize = MINIMUM_PILLAR_SIZE + extensibleWidth * fraction;
+
+			Logging.logger.WriteMessage("Totalsize: " + totalSize);
+			
 			var timeLabel = new Label()
 			{
 				Text = time + "M",
@@ -68,7 +99,9 @@ namespace TimeLoggingApp
 				Margin = 2,
 				Padding = 3,
 				Content = timeLabel,
-				BackgroundColor = action.color
+				BackgroundColor = action.color,
+				WidthRequest = totalSize,
+				HorizontalOptions = LayoutOptions.Start
 			};
 
 			yield return frame;

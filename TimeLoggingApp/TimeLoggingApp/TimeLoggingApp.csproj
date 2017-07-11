@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Dependencies\IScreenSizeCalculator.cs" />
     <Compile Include="Pages\ActionOverviewPage.xaml.cs">
       <DependentUpon>ActionOverviewPage.xaml</DependentUpon>
     </Compile>
